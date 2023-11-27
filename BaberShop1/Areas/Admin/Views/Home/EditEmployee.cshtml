@@ -1,0 +1,215 @@
+﻿@model BaberShop1.Models.NHANVIEN
+
+
+
+@{
+    ViewBag.Tittle = "Employee";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="~/Areas/Admin/Content/css/styles.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="~/Downloads/images/templatemo-barber-logo.png" class="logo-image img-fluid" align="">
+                </div>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="/Admin/Home/Index">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item ">
+                    <a href="/Admin/Home/User">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
+                        <span>User</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Admin/Home/Service">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83" /><path d="M22 12A10 10 0 0 0 12 2v10z" /></svg>
+                        <span>Service</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Admin/Home/Booking">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></svg>
+                        <span>Booking list</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/Admin/Home/Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                        <span>Menu</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item active">
+                    <a href="/Admin/Home/Employee">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                        <span>Employee</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="account-info">
+                <div class="account-info-picture">
+                    <img src="https://images.unsplash.com/photo-1527736947477-2790e28f3443?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHx3b21hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="Account">
+                </div>
+                <div class="account-info-name">VINH&TUNG</div>
+                <button class="account-info-more">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" /></svg>
+                </button>
+            </div>
+        </div>
+        <div class="app-content">
+            <div class="app-content-header">
+                <h1 class="app-content-headerText">DASHBOARD - EMPLOYEE</h1>
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href="/Admin/Home/AddEmployee">
+                    <button type="button" class="btn btn-success"><i class="fas fa-plus mr-2"></i>Add Employee</button>
+                </a>
+            </div>
+            <div class="app-content-actions">
+                <div class="app-content-actions-wrapper">
+                </div>
+            </div>
+            <div class="products-area-wrapper tableView">
+
+
+
+
+
+
+                <div class="">
+                    @using (Html.BeginForm("EditEmployee", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>NHANVIEN</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group  d-flex  align-items-center">
+                            @Html.LabelFor(model => model.ID_NHANVIEN, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ID_NHANVIEN, new { htmlAttributes = new { @class = "form-control disabled", disabled = true } })
+                                @Html.ValidationMessageFor(model => model.ID_NHANVIEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group  d-flex  align-items-center">
+                            @Html.LabelFor(model => model.NAME_NHANVIEN, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.NAME_NHANVIEN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NAME_NHANVIEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group d-flex  align-items-center">
+                            @Html.LabelFor(model => model.SEX, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.SEX, ViewBag.sex as SelectList, new { @class = "form-control" })
+                  
+                                @Html.ValidationMessageFor(model => model.SEX, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group d-flex  align-items-center">
+                            @Html.LabelFor(model => model.SKILL, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.SKILL, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SKILL, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group  d-flex  align-items-center">
+                            <label class="control-label col-md-2">CURRENT IMG</label>
+                            <div class="col-md-10">
+                                <img width="200" src="~/Content/Upload/img/Employee/@Model.AVT" alt="error.png" />
+                            </div>
+                        </div>
+                        <div class="form-group  d-flex  align-items-center">
+                            @Html.LabelFor(model => model.AVT, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <input type="file" name="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                                @Html.ValidationMessageFor(model => model.AVT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group d-flex  align-items-center">
+                            @Html.LabelFor(model => model.PHONE, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.PHONE, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PHONE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group d-flex  align-items-center">
+                            @Html.LabelFor(model => model.LINK_FB, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.LINK_FB, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LINK_FB, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group d-flex  align-items-center">
+                            @Html.LabelFor(model => model.LINK_INSTAGRAM, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.LINK_INSTAGRAM, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LINK_INSTAGRAM, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-group  d-flex  align-items-center">
+                            @Html.LabelFor(model => model.DESCRIPSTION_NV, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.DESCRIPSTION_NV, new { htmlAttributes = new { @class = "form-control editDesc" } })
+                                @Html.ValidationMessageFor(model => model.DESCRIPSTION_NV, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="m-3  d-flex justify-content-end">
+                                <input type="submit" value="Save" class="btn btn-warning" />
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Areas/Admin/JavaScript/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="~/Areas/Admin/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Areas/Admin/Content/ckfinder/ckfinder.js"></script>
+    <script>
+        CKEDITOR.replace('DESCRIPSTION_NV');
+        CKFinder.setupCKEditor(DESCRIPSTION_NV, '/ckfinder/');
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+﻿
+@model IEnumerable<BaberShop1.Models.NHANVIEN>
+
+<div class="row">
+
+    <div class="col-lg-12 col-12 mx-auto">
+        <h2 class="mb-4">Best hairdressers</h2>
+
+        <div class="border-bottom pb-3 mb-5">
+            <p>Chào mừng đến với BaberShop để có trải nghiệm tốt hơn xin mới quý khách hãy lựa chọn và đặt gói dịch vụ cho riêng mình. Cảm ơn quý khách hàng đã ghé thăm!!!</p>
+        </div>
+    </div>
+
+    <div class="mb-5 d-flex justify-content-between">
+        <h6 class="">Meet Babers</h6>
+        <a href="/HomeBaberShop/listEmployee">View all</a>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div href="/employeeDetail" class="col-lg-5 col-12 custom-block-bg-overlay-wrap me-lg-5 mb-5 mb-2">
+            <a href="/HomeBaberShop/employeeDetail/@item.ID_NHANVIEN">
+                <img src='~/Content/Upload/img/Employee/@item.AVT' class="custom-block-bg-overlay-image img-fluid" alt="">
+            </a>
+
+            <div class="team-info d-flex align-items-center flex-wrap">
+                <p class="mb-0">@item.NAME_NHANVIEN</p>
+
+                <ul class="social-icon ms-auto">
+                    <li class="social-icon-item">
+                        <a href="@item.LINK_FB" class="social-icon-link">
+                            <img width="30" height="30" src="https://cdn-icons-png.flaticon.com/512/6422/6422199.png" />
+                        </a>
+                    </li>
+
+                    <li class="social-icon-item">
+                        <a href="@item.LINK_INSTAGRAM" class="social-icon-link ">
+                            <img width="30" height="30" src="https://img.icons8.com/material-rounded/512/instagram-new.png" />
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    }
+
+
+
+
+</div>

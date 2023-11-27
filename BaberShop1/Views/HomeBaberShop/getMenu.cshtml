@@ -1,0 +1,23 @@
+﻿
+@model IEnumerable<BaberShop1.Models.MENU>
+
+
+<ul class="nav flex-column">
+    @{
+        var index = 1;
+        foreach (var item in Model)
+        {
+            <li class="nav-item">
+                <a class="nav-link click-scroll" href="#section_@index">@item.NAME_MENU</a>
+            </li>
+            index++;
+        }
+    }
+
+
+
+</ul>
+
+
+
+

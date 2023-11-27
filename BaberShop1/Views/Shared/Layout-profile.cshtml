@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gentlemen's Barber Shop - HTML CSS Template</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+    
+    @Styles.Render("~/Content/css/bootstrap.min.css")
+    @Styles.Render("~/Content/css/bootstrap-icons.css")
+    @Styles.Render("~/Content/css/templatemo-barber-shop.css")
+
+    <!--
+
+    TemplateMo 585 Barber Shop
+
+    https://templatemo.com/tm-585-barber-shop
+
+    -->
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse p-0">
+
+                <div class="position-sticky sidebar-sticky d-flex flex-column justify-content-center align-items-center">
+                    <a class="navbar-brand" href="/">
+                        <img src="~/Downloads/images/templatemo-barber-logo.png" class="logo-image img-fluid" align="">
+                    </a>
+                </div>
+            </nav>
+
+            <div class="col-md-9 ms-sm-auto col-lg-10 p-0">
+                <div>
+                    <ul class="nav nav_color justify-content-between">
+                        <li class="nav-item">
+                            <a class="text-light fw-bold m-2" href="/">Trang chủ</a>
+                        </li>
+                        @if (Session["USERNAME"] == null)
+                        {
+                            <li class="nav-item">
+                                <a class="btn btn-danger rounded m-2" href="/auth/login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item d-flex justify-content-between">
+                                <a class="nav-link text-light fw-bold" href="/HomeBaberShop/profile">@Session["USERNAME"]</a>
+                                <a class="btn btn-danger rounded m-2" href="/auth/logout">Log out</a>
+                            </li>
+                            
+                        }
+                    </ul>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+            <!-- JAVASCRIPT FILES -->
+            @Scripts.Render("~/Scripts/js/jquery.min.js")
+            @Scripts.Render("~/Scripts/js/bootstrap.min.js")
+            @Scripts.Render("~/Scripts/js/click-scroll.js")
+            @Scripts.Render("~/Scripts/js/custom.js")
+
+            
+
+</body>
+</html>

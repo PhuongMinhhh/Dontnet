@@ -1,0 +1,132 @@
+﻿
+@model BaberShop1.Models.BOOKING
+
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/My_layout.cshtml";
+}
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<div class="custom-form booking-form w-100" id="bb-booking-form" role="form">
+    <div class="text-center mb-5">
+        <h2 class="mb-1">Book a seat</h2>
+        @{
+            if (ViewBag.Success != null)
+            {
+                <script>
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: @ViewBag.Success,
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        window.location.replace("/HomeBaberShop/index")
+                    })
+                </script>
+            }
+        }
+        <p class="text-danger">@ViewBag.Error</p>
+        <p>Please fill out the form and we get back to you</p>
+
+    </div>
+
+    <div class="booking-form-body">
+        @using (Html.BeginForm("getFormBookSeat", "HomeBaberShop", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    @Html.EditorFor(model => model.NAME_BOOK, new { htmlAttributes = new { placeholder = "Full name", required = true, @class = "form-control" } })
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    @Html.EditorFor(model => model.PHONE_BOOK, new { htmlAttributes = new { required = "", placeholder = "Mobile 0123456789", pattern = "[0-9]{10}", @class = "form-control" } })
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    @Html.EditorFor(model => model.TIME_BOOKING, new { htmlAttributes = new { type = "time", @class = "form-control" } })
+                </div>
+
+
+                <div class="col-lg-6 col-12">
+                    @Html.EditorFor(model => model.DATE_BOOKING, new { htmlAttributes = new { placeholder = "Date", required = true, type = "date", @class = "form-control" } })
+                </div>
+            </div>
+            @Html.TextAreaFor(model => model.COMMENT, new { rows = "3", placeholder = "Comment (Optionals)", @class = "form-control" })
+
+            <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                <button type="submit" class="form-control">Submit</button>
+            </div>
+
+        }
+    </div>
+</div>
+
+
+
+
+
+@*
+
+
+
+
+    <div class="form-horizontal">
+        <h4>BOOKING</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NAME_BOOK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NAME_BOOK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NAME_BOOK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PHONE_BOOK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PHONE_BOOK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PHONE_BOOK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DATE_BOOKING, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DATE_BOOKING, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DATE_BOOKING, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TIME_BOOKING, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TIME_BOOKING, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TIME_BOOKING, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.COMMENT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.COMMENT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.COMMENT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+        <div class="text-danger">@ViewBag.Error</div>
+    </div>
+*@
